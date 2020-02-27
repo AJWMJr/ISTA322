@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  body {
+    background-image: linear-gradient(#d9d9d9, #ffffff);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  table {border: 1px solid black;padding:5px;background-color:white}
+  td {border-left: 1px solid black; padding: 5px;}
+  .first {border-left: none; padding-left: 0}
+  #flashy {margin-top: 2px;font-size: 60pt;text-align:center}
+  a {
+    text-decoration: none;
+    display:inline-block;
+    color: black;
+    background-image: linear-gradient(#d9d9d9, #ffffff, #d9d9d9);
+    padding: 5px;
+    font-weight: bold;
+    box-shadow: 2px 3px #333333;
+  }
+  .THead {
+    font-weight:bold;
+    text-decoration:underline;
+    text-align:center;
+    border-left: none;
+  }
+</style>
+<title>Lab 1</title>
+<meta name="author" content="AJ McCray" />
+<meta name="date" content="February 26, 2020" />
+<meta name="exam" content="Passed CISSP" />
+<body>
+  <h1 id="flashy">LAB 01</h1>
+  <h1>Contents</h1>
+  <a href="#header">Headers and Paragraphs</a>
+  <a href="#list">Lists</a>
+  <a href="#table">Tables</a>
+  <a href="#form">Forms</a>
+  <hr />
+  <a href="#" id="header">To Top</a>
+  <h1>First Level Header</h1>
+  <h2>Paragraph Illustration</h2>
+  <p>This is a Paragraph</p>
+
+  <hr />
+  <h2>Abraham Lincoln</h2>
+  <p>Four score and seven <i>years</i> ago our forefathers brought forth on this <b>continent</b>
+     a nation conceived in <b><i>liberty</i></b> and decided to the propisition that all men are created equal
+  </p>
+  <a href="#" id="list">To Top</a>
+  <h2>Lists</h2>
+
+  <h3>Ordered LIst</h3>
+
+  <ol>
+    <li>Green</li>
+    <li>Eggs</li>
+    <li>And</li>
+    <li>Ham</li>
+  </ol>
+
+  <h3>Unordered List</h3>
+
+  <ul>
+    <li>The</li>
+    <li>Cat</li>
+    <li>in</li>
+    <li>The</li>
+    <li>Hat</li>
+  </ul>
+
+  <h3>Dictionary List</h3>
+
+  <dl>
+    <dt>M1 Garand</dt>
+    <dd>30 cal</dd>
+    <dt>M14</dt>
+    <dd>7.62mm</dd>
+    <dt>M16</dt>
+    <dd>5.56</dd>
+    <dt>M1911</dt>
+    <dd>45 Cal</dd>
+    <dt>M2</dt>
+    <dd>50 Cal</dd>
+  </dl>
+
+  <a href="#" id="table">To Top</a>
+  <h2>Tables</h2>
+
+  <h3>Simple Table</h3>
+
+  <table>
+    <tr>
+      <th>Breakfast</th>
+      <th>Lunch</th>
+      <th>Supper</th>
+    </tr>
+    <tr>
+      <td class="first">coffee</td>
+      <td>fake chicken</td>
+      <td>chicken wings</td>
+    </tr>
+    <tr>
+      <td class="first">orange</td>
+      <td>tofu</td>
+      <td>celery</td>
+    </tr>
+  </table>
+
+  <table>
+    <caption>Music Database</caption>
+    <tr><td class="THead" colspan="4">R &amp; B</td></tr>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Album</th>
+      <th>Release Date</th>
+    </tr>
+    <tr>
+      <td class="first">Confessions</td>
+      <td>Usher</td>
+      <td>Confessions</td>
+      <td>2004</td>
+    </tr>
+    <tr>
+      <td class="first">Baby</td>
+      <td>Justin Beiber</td>
+      <td>My Environment</td>
+      <td>2009</td>
+    </tr>
+    <tr>
+      <td class="first">Sweet Mama</td>
+      <td>Bob Marley</td>
+      <td>My Mama</td>
+      <td>2020</td>
+    </tr>
+    <tr><td class="THead" colspan="4">Country</td></tr>
+    <tr>
+      <td class="first">Hound Dog</td>
+      <td>Elvis Presley</td>
+      <td>Hound Dog</td>
+      <td>1956</td>
+    </tr>
+    <tr>
+      <td class="first">Drive</td>
+      <td>Alan Jackson</td>
+      <td>Drive</td>
+      <td>2002</td>
+    </tr>
+  </table><br />
+
+    <a href="#" id="form">To Top</a>
+    <h2>Forms</h2>
+    <form>
+      <input type="hidden" name="secret" />
+      Username: <input type="text" name="user" /><br />
+      Password: <input type="password" name="password" /><br />
+      Pick a number: <input type="range" value="50" min="0" max="100"
+      step="5" name="myRange" id="myRange" oninput="rangedisplay.value = myRange.value" />
+      <output id="rangedisplay"></output><br />
+      <input type="color" name="myhue" id="myhue" /><br />
+      <h3 style="margin: 5px 0 10px 0">My Pizza</h3>
+      <input type="checkbox" name="mypizza" value="pineapple" />
+      Pineapple
+      <input type="checkbox" name="mypizza" value="bananas" />
+      Banana
+      <input type="checkbox" name="mypizza" value="onion" />
+      Onion
+      <input type="checkbox" name="mypizza" value="mushroom" />
+      Mushroom<br />
+      <input type="radio" name="sex" value="Male" checked="checked" />Male
+      <input type="radio" name="sex" value="Female" />Female
+      <input type="radio" name="sex" value="Unsure" />Other<br /><br />
+      <select name="yourpizza" size="2" multiple="multiple">
+        <option value="bacon">Bacon</option>
+        <option value="jalepenos">Jalepenos</option>
+        <option value="bbq chicken">BBQ Chicken</option>
+        <option value="pepper">Green Pepper</option>
+        <option value="truffle">Black Truffle</option>
+      </select><br />
+      <textarea rows="6" cols="40" name="comments" placeholder="Put Comment Here"></textarea>
+      <hr />
+      Submit: <input type="submit" value="Submit" /><br />
+    </form>
+
+    <h2>Generic Elements</h2>
+    <a id="generic"></a>
+    <div>First</div>
+    <div>Second</div>
+    <div>Third</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla dapibus purus. In vel ex lorem. Morbi scelerisque aliquet gravida. Nunc et libero molestie, mattis sem in, sagittis purus. Nam placerat augue diam. Etiam aliquam turpis ut purus faucibus, a dictum leo viverra. Donec eros lectus, porta eu fermentum nec, rutrum sed metus. Proin elementum arcu at eleifend convallis. Duis orci nunc, porttitor a justo ac, iaculis efficitur magna. Proin id tortor accumsan sem tempus bibendum. Sed vehicula imperdiet volutpat. Etiam augue lacus, fermentum a semper eu, hendrerit nec leo. Donec rutrum in nisl vel consequat.
+
+Suspendisse dignissim scelerisque aliquam. Duis consequat tortor id nisi rutrum, eget pulvinar est dictum. Duis sit amet elementum nibh. In enim nisl, consectetur id mollis sit amet, auctor quis lorem. Nam felis nisi, ullamcorper id facilisis ut, dictum id felis. Aliquam sed ipsum efficitur, volutpat purus sed, auctor odio. Nulla nunc nisl, consequat id fringilla eget, imperdiet at est. Cras vel diam turpis. Fusce quis posuere felis, id blandit lectus. Duis accumsan leo id gravida lobortis. Aliquam lobortis quam porttitor libero consequat pretium. Pellentesque rutrum neque risus, quis gravida ligula aliquam a.
+
+Curabitur pulvinar faucibus efficitur. Quisque placerat lorem efficitur venenatis vulputate. Nulla facilisi. Phasellus aliquet nunc id lorem suscipit mollis. Quisque volutpat sed ex non accumsan. Morbi mi lectus, molestie quis vestibulum at, suscipit eu nibh. Donec auctor, tortor at efficitur vehicula, tortor nunc ultricies lacus, vel bibendum arcu turpis nec est. Cras fringilla nulla elit, a faucibus justo interdum sit amet. Mauris non facilisis eros. Vestibulum tincidunt felis vitae malesuada accumsan. Maecenas pharetra mi metus, at tempus nulla volutpat at.</div>
+  <span>Uno</span>
+  <span>Dos</span>
+  <span>Tres</span>
+  <span>Quatro</span>
+  <span>Cinco</span>
+
+  <script>
+    var x = 0;
+    var color;
+    function sporadic() {
+      var par = document.getElementById('flashy');
+      par.style.color = color;
+      x = x+1;
+      if (x == 1) {
+        color = 'red';
+      }
+      else if (x == 2) {
+        color = 'green';
+      }
+      else if (x == 3) {
+        color = 'blue';
+      }
+      else if (x == 4) {
+        color = 'yellow';
+        x = 0;
+      }
+      setTimeout("sporadic()", 200);
+    }
+    window.onload = sporadic();
+  </script>
+</body>
+</html>
