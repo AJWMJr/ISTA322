@@ -1,0 +1,11 @@
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\obj\Debug\netcoreapp3.1\CSSBS-Quiz08.csprojAssemblyReference.cache
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\obj\Debug\netcoreapp3.1\CSSBS-Quiz08.AssemblyInfoInputs.cache
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\obj\Debug\netcoreapp3.1\CSSBS-Quiz08.AssemblyInfo.cs
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\bin\Debug\netcoreapp3.1\CSSBS-Quiz08.exe
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\bin\Debug\netcoreapp3.1\CSSBS-Quiz08.deps.json
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\bin\Debug\netcoreapp3.1\CSSBS-Quiz08.runtimeconfig.json
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\bin\Debug\netcoreapp3.1\CSSBS-Quiz08.runtimeconfig.dev.json
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\bin\Debug\netcoreapp3.1\CSSBS-Quiz08.dll
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\bin\Debug\netcoreapp3.1\CSSBS-Quiz08.pdb
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\obj\Debug\netcoreapp3.1\CSSBS-Quiz08.dll
+C:\Users\wwstudent\Documents\ISTA322\Quizes\CSSBS-Quiz08\obj\Debug\netcoreapp3.1\CSSBS-Quiz08.pdb
