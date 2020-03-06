@@ -1,0 +1,17 @@
+﻿@model IEnumerable<string>
+@{Layout = null;}
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width" />
+<title>Language Features</title>
+<body>
+    <h1>This Content is from the Home Controller</h1>
+    <ul>
+        @foreach (string s in Model)
+        {
+            <li>@s</li>
+        }
+    </ul>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<title>ASPNET Lab 3</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {
+  background-image: linear-gradient(#d9d9d9, #f2f2f2, #d9d9d9);
+  background-attachment: fixed;
+  text-align: center;
+  padding: 0 10% 0 10%;
+}
+h1 {
+  display: block;
+  border-radius: 25px 25px 0 0;
+  font-size: 60pt;
+  background-color: #512a82;
+  color: white;
+  margin: 0 0 20px 0;
+}
+p {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 20pt;
+  line-height: 1.5;
+  text-indent: 9%;
+}
+.w3-container {
+  background-color: white;
+  padding: 0;
+  border-radius: 25px 25px 0 0;
+}
+.smol {
+  font-variant: small-caps;
+}
+#circle {
+  position: fixed;
+  left: 10px;
+  border-radius: 100px;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+}
+#c1 {
+  background-color: purple;
+  width: 100%;
+  height: 100px;
+}
+#c2 {
+  background-color: yellow;
+  width: 100%;
+  height: 100px;
+}
+#button {
+  display: inline-block;
+  padding: 5px 20px 5px 20px;
+  font-size: 20pt;
+  border-radius: 15px;
+  border: 1px solid black;
+  background-color: purple;
+  color: yellow;
+  cursor: pointer;
+}
+#p1 {
+  font-family: serif;
+  font-style: normal;
+}
+#p2 {
+  font-family: san-serif;
+  font-style: oblique;
+}
+#highlight {
+  text-decoration: overline;
+  background-color: #bfbfbf;
+}
+#p3 {
+  font-family: monospace;
+  font-style: italic;
+}
+#p4 {font-family: cursive;}
+.bold {
+  font-weight: 800;
+  cursor: pointer;
+}
+.bold:hover {font-size: 25pt;}
+</style>
+<body>
+  <div id="circle">
+    <div id="c1"></div>
+    <div id="c2"></div>
+  </div>
+  <div class="w3-container">
+    <h1>Lab 03</h1>
+    <div id="button" onclick="toggle()">On/Off</div>
+    <h2 class="smol">Paragraph 1</h2>
+    <p id="p1">
+      <span class="bold" onmouseover="HEY()" onmouseout="unhey()">Lorem ipsum dolor sit amet,</span> consectetur adipiscing elit. Ut vitae eros vel felis pretium suscipit. Nunc laoreet eros velit, non accumsan enim viverra ac. Cras at velit pellentesque, elementum velit vel, interdum neque. In ullamcorper justo ut diam pulvinar, eu mollis est blandit. Mauris sit amet ipsum et eros auctor eleifend sit amet nec sem. Donec pretium at sem in dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum magna mi, <span style="text-decoration:underline;">eu sagittis ligula suscipit et</span>. Aliquam pulvinar elementum luctus. Morbi congue nec odio ac dictum. Mauris cursus commodo volutpat. Donec pharetra iaculis imperdiet. Maecenas mattis ligula vitae velit hendrerit iaculis. In hac habitasse platea dictumst. Suspendisse gravida, augue non malesuada vivermonospace justo tristique neque, id auctor erat sem et metus.
+    </p>
+    <h2 class="smol">Paragraph 2</h2>
+    <p id="p2">
+      Integer molestie malesuada dolor, <span class="bold">a maximus enim</span> sollicitudin eget. Praesent leo nisl, iaculis eget lacus nec, aliquet euismod lorem. Maecenas vulputate placerat justo, eget sollicitudin odio imperdiet id. Nullam luctus porttitor commodo. Phasellus feugiat lacus et purus fringilla, vitae hendrerit eros fermentum. Nunc ultricies enim in neque efficitur finibus. Fusce eget faucibus mauris, ac consequat nunc. Quisque eu sapien elit. Nulla et molestie felis, sit amet maximus dui. <span id="highlight">Proin gravida risus nec pharetra viverra.</span> Etiam viverra, ipsum eu euismod accumsan, ante dolor pharetra tellus, eget tempor arcu lectus eget nisl. Curabitur efficitur viverra mi vitae suscipit. Pellentesque arcu augue, rhoncus nec nisi at, consequat aliquet dolor. Mauris ultricies eleifend turpis ut dignissim. Sed sodales malesuada lacinia.
+    </p>
+    <h2>Paragraph 3</h2>
+    <p id="p3">
+      <span class="bold">Fusce efficitur lectus</span> sagittis risus viverra, non gravida velit luctus. Mauris nec luctus neque, id imperdiet dui. Nullam pharetra dolor sapien, nec congue purus sodales in. Nullam ut mi nisl. Fusce vehicula, lacus in commodo dignissim, erat nulla accumsan lorem, in gravida massa lorem suscipit leo. Duis auctor odio justo. <span style="text-decoration:line-through;">Suspendisse potenti.</span> Vestibulum porta nunc nec justo sollicitudin, ac egestas tellus pharetra. Aliquam erat volutpat. Morbi sit amet faucibus risus. Duis eleifend nulla sed sagittis tincidunt. Aliquam non massa commodo, tempor felis in, lobortis ligula. Curabitur sollicitudin luctus ex a consectetur.
+    </p>
+    <h2>Paragraph 4</h2>
+    <p id="p4">
+      Proin iaculis risus eget neque <span class="bold">sollicitudin vehicula</span>. Sed elementum blandit enim, et rhoncus velit posuere ut. Sed in ullamcorper eros, nec scelerisque risus. Donec convallis et diam nec tincidunt. Fusce erat dolor, vehicula quis lacinia nec, sagittis a magna. Mauris eget tristique felis, molestie imperdiet arcu. Duis euismod magna porta, fermentum ligula in, sagittis eros. Integer non orci vel dolor sagittis volutpat at in leo.
+    </p>
+  </div>
+  <script>
+  var loc = 100;
+  var deg = 0;
+  var circle = document.getElementById('circle');
+  var abort = false;
+  var dir = "right";
+  function toggle() {
+    if (abort) {
+      abort = false;
+      run();
+    }
+    else if (!abort) {
+      abort = true;
+    }
+  }
+  function run() {
+    if (abort) {return;}
+    if (dir == "left"){
+      circle.style.left = loc.toString() + "%";
+      loc -= 2;
+      if (loc<2){
+        dir = "right";
+      }
+    }
+    else {
+      circle.style.left = loc.toString() + "%";
+      loc += 2;
+      if (loc>88) {
+        dir = "left";
+      }
+    }
+    setTimeout("run()", 50);
+  }
+  function rotate() {
+    if (dir == "right") {
+      deg += 18;
+    }
+    else if (dir == "left") {
+      deg -= 18;
+    }
+    circle.style.transform = "rotate(" + deg.toString() + "deg)";
+    setTimeout("rotate()", 50);
+  }
+  function HEY() {document.getElementsByClassName('bold')[0].innerHTML = "Hey! Go Away!";}
+  function unhey() {document.getElementsByClassName('bold')[0].innerHTML = "Lorem ipsum dolor sit amet,"}
+  function init() {
+    run();
+    rotate();
+  }
+window.onload = init();
+</script>
+</body>
+</html>
