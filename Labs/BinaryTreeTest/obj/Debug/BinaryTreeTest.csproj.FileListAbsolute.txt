@@ -1,0 +1,9 @@
+C:\Users\wwstudent\Documents\ISTA322\Labs\BinaryTreeTest\bin\Debug\BinaryTreeTest.exe.config
+C:\Users\wwstudent\Documents\ISTA322\Labs\BinaryTreeTest\bin\Debug\BinaryTreeTest.exe
+C:\Users\wwstudent\Documents\ISTA322\Labs\BinaryTreeTest\bin\Debug\BinaryTreeTest.pdb
+C:\Users\wwstudent\Documents\ISTA322\Labs\BinaryTreeTest\bin\Debug\cssbs-lab17.dll
+C:\Users\wwstudent\Documents\ISTA322\Labs\BinaryTreeTest\bin\Debug\cssbs-lab17.pdb
+C:\Users\wwstudent\Documents\ISTA322\Labs\BinaryTreeTest\obj\Debug\BinaryTreeTest.csprojAssemblyReference.cache
+C:\Users\wwstudent\Documents\ISTA322\Labs\BinaryTreeTest\obj\Debug\BinaryTreeTest.csproj.CopyComplete
+C:\Users\wwstudent\Documents\ISTA322\Labs\BinaryTreeTest\obj\Debug\BinaryTreeTest.exe
+C:\Users\wwstudent\Documents\ISTA322\Labs\BinaryTreeTest\obj\Debug\BinaryTreeTest.pdb
