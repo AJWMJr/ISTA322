@@ -23,9 +23,10 @@ namespace RouletteTesting
             Position pos = new Position();
             Nav();
         }
-        private static string Nav()
+        private static void Nav()
         {
             string choice, result;
+            int c;
             Console.WriteLine("Let's play some Roulette!");
             Console.WriteLine("Place your bets:");
             Console.WriteLine("    1) Bet single number");
@@ -47,7 +48,7 @@ namespace RouletteTesting
                 if (c < 1 || c > 36)
                     badInput();
                 else
-                    return choice;
+                    strChoice(choice);
             }
             else if (input == 2)
             {
@@ -55,9 +56,11 @@ namespace RouletteTesting
                 choice = Console.ReadLine();
                 result = letterChoice(choice, "E", "O");
                 if (result == "E")
-                    return "Even";
+                    strChoice("Even");
+                else if (result == "O")
+                    strChoice("Odd");
                 else
-                    return "Odd";
+                    Nav();
             }
             else if (input == 3)
             {
@@ -65,9 +68,9 @@ namespace RouletteTesting
                 choice = Console.ReadLine();
                 result = letterChoice(choice, "R", "B");
                 if (result == "R")
-                    return "Red";
+                    strChoice("Red");
                 else
-                    return "Black";
+                    strChoice("Black");
             }
             else if (input == 4)
             {
@@ -75,27 +78,35 @@ namespace RouletteTesting
                 choice = Console.ReadLine();
                 result = letterChoice(choice, "L", "H");
                 if (result == "L")
-                    return "Lower";
+                    strChoice("Lower");
                 else
-                    return "Higher";
+                    strChoice("Higher");
             }
             else if (input == 5)
             {
                 Console.Write("1st dozen, 2nd dozen, or 3rd dozen? type 1, 2, or 3: ");
                 choice = Console.ReadLine();
-                chkParse(choice);
+                ThreeOptions(choice);
             }
             else if (input == 6)
             {
                 Console.Write("1st column, 2nd column, or 3rd column? type 1, 2, or 3");
                 choice = Console.ReadLine();
-                return chkParse(choice);
-                // NEED TO ADDRESS OVERLAP OF RETURNED VALUES BETWEEN COLUMNS AND DOZENS
+                result = ThreeOptions(choice);
+                // NEED TO ADDRESS OVERLAP OF strChoice(ED VALUES BETWEEN COLUMNS AND DOZENS
             }
             else if (input == 7)
             {
-                Console.Write("pick a street");
+                Console.Write("pick a street use this last number in the street [example for the first street (1/2/3) type 3, etc.]");
                 choice = Console.ReadLine();
+                chkParse(choice);
+                c = int.Parse(choice);
+                int[] street = new int[3];
+                for (int i = 0; i < street.Length - 1; i++)
+                {
+                    street[i] = c - i;
+                }
+                arrChoice(street);
             }
             else if (input == 8)
             {
@@ -106,27 +117,43 @@ namespace RouletteTesting
 
             }
         }
+
+        private static void arrChoice(int[] A)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void strChoice(string choice)
+        {
+            throw new NotImplementedException();
+        }
+
         private static string letterChoice(string choice, string L1, string L2)
         {
             if ((choice == L1) || (choice == L1.ToLower())) { return L1; }
             if ((choice == L2) || (choice == L2.ToLower())) { return L2; }
             else
             {
-                Console.WriteLine("Invalid choice. Returning to main menu");
-                return Nav();
+                Console.WriteLine("Invalid choice. strChoice(ing to main menu");
+                return "fail";
             }
         }
         private static void badInput()
         {
-            Console.WriteLine("Invalid. Returning to main menu");
+            Console.WriteLine("Invalid. strChoice(ing to main menu");
             Nav();
         }
-        private static string chkParse(string choice)
+        private static int chkParse(string choice)
         {
             int c;
             try { c = int.Parse(choice); }
             catch { badInput(); }
             c = int.Parse(choice);
+            return c;
+        }
+        private static string ThreeOptions(string choice)
+        {
+            int c = chkParse(choice);
             if (c < 1 || c > 3)
                 badInput();
             if (c == 1)

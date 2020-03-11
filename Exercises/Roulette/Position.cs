@@ -21,8 +21,11 @@ namespace RouletteTesting
             else if (Blacks.Contains(num))
                 color = "BLACK";
             else
+            {
+                if (num == -1)
+                    num = 0;
                 color = "green";
-
+            }
         }
     }
 }
