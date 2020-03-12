@@ -10,13 +10,20 @@ namespace RouletteTesting
         enum Column { First, Second, Third}
         static void Main(string[] args)
         {
+            int setting = 0;
             Dictionary<string, List<int>> columns = new Dictionary<string, List<int>>(numCols);
             for (Column cols = Column.First; cols < Column.Third; cols++)
             {
+                setting++;
                 List<int> nums = new List<int>(colSize);
                 for (int i = 1; i <= colSize; i++)
                 {
-                    nums.Add(i);
+                    if (setting == 1)
+                        nums.Add(i);
+                    if (setting == 2)
+                        nums.Add(i + 12);
+                    if (setting == 3)
+                        nums.Add(i + 24);
                 }
                 columns.Add(cols.ToString(), nums);
             }
@@ -43,8 +50,7 @@ namespace RouletteTesting
             {
                 Console.Write("please enter a number between 1 and 36: ");
                 choice = Console.ReadLine();
-                chkParse(choice);
-                c = int.Parse(choice);
+                c = chkParse(choice);
                 if (c < 1 || c > 36)
                     badInput();
                 else
@@ -54,53 +60,40 @@ namespace RouletteTesting
             {
                 Console.Write("Odd or Even? type O or E: ");
                 choice = Console.ReadLine();
-                result = letterChoice(choice, "E", "O");
-                if (result == "E")
-                    strChoice("Even");
-                else if (result == "O")
-                    strChoice("Odd");
-                else
-                    Nav();
+                choice.ToUpper();
+                letterChoice(choice, "E", "O");
             }
             else if (input == 3)
             {
                 Console.Write("Red or Black? type R or B: ");
                 choice = Console.ReadLine();
-                result = letterChoice(choice, "R", "B");
-                if (result == "R")
-                    strChoice("Red");
-                else
-                    strChoice("Black");
+                choice.ToUpper();
+                letterChoice(choice, "R", "B");
             }
             else if (input == 4)
             {
                 Console.Write("Do you want Lows (1-18) or highs (19-36)? type L or H: ");
                 choice = Console.ReadLine();
-                result = letterChoice(choice, "L", "H");
-                if (result == "L")
-                    strChoice("Lower");
-                else
-                    strChoice("Higher");
+                choice.ToUpper();
+                letterChoice(choice, "L", "H");
             }
             else if (input == 5)
             {
                 Console.Write("1st dozen, 2nd dozen, or 3rd dozen? type 1, 2, or 3: ");
                 choice = Console.ReadLine();
-                ThreeOptions(choice);
+                ThreeOptions(choice, 'A');
             }
             else if (input == 6)
             {
                 Console.Write("1st column, 2nd column, or 3rd column? type 1, 2, or 3");
                 choice = Console.ReadLine();
-                result = ThreeOptions(choice);
-                // NEED TO ADDRESS OVERLAP OF strChoice(ED VALUES BETWEEN COLUMNS AND DOZENS
+                ThreeOptions(choice, 'B');
             }
             else if (input == 7)
             {
-                Console.Write("pick a street use this last number in the street [example for the first street (1/2/3) type 3, etc.]");
+                Console.Write("pick a street use this last number in the street [example: for the first street (1/2/3) type 3, etc.]");
                 choice = Console.ReadLine();
-                chkParse(choice);
-                c = int.Parse(choice);
+                c = chkParse(choice);
                 int[] street = new int[3];
                 for (int i = 0; i < street.Length - 1; i++)
                 {
@@ -110,11 +103,39 @@ namespace RouletteTesting
             }
             else if (input == 8)
             {
-
+                Console.Write("Please type your first number hit enter and then type your second number");
+                int[] split = new int[2];
+                choice = Console.ReadLine();
+                split[0] = chkParse(choice);
+                choice = Console.ReadLine();
+                split[1] = chkParse(choice);
+                if (split[0] < (split[1] - 1) || split[0] > (split[1] + 1))
+                {
+                    Console.WriteLine("That is not a valid split");
+                    Nav();
+                }
+                arrChoice(split);
             }
             else if (input == 9)
             {
-
+                Console.Write("Please pick the top left number of a corner. [example: if you want (1/2/4/5) type 1");
+                choice = Console.ReadLine();
+                c = chkParse(choice);
+                if ((c % 3) == 0)
+                {
+                    Console.WriteLine("Please pick the top left number of the corner");
+                    Nav();
+                }
+                int[] corner = new int[4];
+                corner[0] = c;
+                for (int i = 1; i < corner.Length; i++)
+                {
+                    if (i > 1)
+                        corner[i] = c + 1 + i;
+                    else
+                        corner[i] = c + i;
+                }
+                arrChoice(corner);
             }
         }
 
@@ -123,24 +144,26 @@ namespace RouletteTesting
             throw new NotImplementedException();
         }
 
-        private static void strChoice(string choice)
+        private static void strChoice(string choice, char A = 'C')
         {
             throw new NotImplementedException();
         }
 
-        private static string letterChoice(string choice, string L1, string L2)
+        private static void letterChoice(string choice, string L1, string L2)
         {
-            if ((choice == L1) || (choice == L1.ToLower())) { return L1; }
-            if ((choice == L2) || (choice == L2.ToLower())) { return L2; }
+            if (choice == L1)
+                 strChoice(L1);
+            if (choice == L2)
+                strChoice(L2);
             else
             {
-                Console.WriteLine("Invalid choice. strChoice(ing to main menu");
-                return "fail";
+                Console.WriteLine("Invalid choice. returning to main menu");
+                Nav();
             }
         }
         private static void badInput()
         {
-            Console.WriteLine("Invalid. strChoice(ing to main menu");
+            Console.WriteLine("Invalid. returning to main menu");
             Nav();
         }
         private static int chkParse(string choice)
@@ -151,19 +174,22 @@ namespace RouletteTesting
             c = int.Parse(choice);
             return c;
         }
-        private static string ThreeOptions(string choice)
+        private static void ThreeOptions(string choice, char A)
         {
             int c = chkParse(choice);
             if (c < 1 || c > 3)
                 badInput();
             if (c == 1)
-                return "First";
+                strChoice("First", A);
             else if (c == 2)
-                return "Second";
+                strChoice("Second", A);
             else if (c == 3)
-                return "Third";
+                strChoice("Third", A);
             else
-                return null;
+            {
+                Console.WriteLine("Please enter a valid choice. returning to main menu");
+                Nav();
+            }
         }
     }
 }
