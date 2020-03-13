@@ -1,0 +1,11 @@
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\obj\Debug\netcoreapp3.1\Roulette.csprojAssemblyReference.cache
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\obj\Debug\netcoreapp3.1\Roulette.AssemblyInfoInputs.cache
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\obj\Debug\netcoreapp3.1\Roulette.AssemblyInfo.cs
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\bin\Debug\netcoreapp3.1\Roulette.exe
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\bin\Debug\netcoreapp3.1\Roulette.deps.json
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\bin\Debug\netcoreapp3.1\Roulette.runtimeconfig.json
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\bin\Debug\netcoreapp3.1\Roulette.runtimeconfig.dev.json
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\bin\Debug\netcoreapp3.1\Roulette.dll
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\bin\Debug\netcoreapp3.1\Roulette.pdb
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\obj\Debug\netcoreapp3.1\Roulette.dll
+C:\Users\Chain\Documents\ISTA322\Exercises\Roulette\obj\Debug\netcoreapp3.1\Roulette.pdb

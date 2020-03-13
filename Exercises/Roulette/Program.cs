@@ -1,38 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace RouletteTesting
+namespace Roulette
 {
     class Program
     {
-        private const int numCols = 3;
-        private const int colSize = 12;
-        enum Column { First, Second, Third}
+        enum Column { First, Second, Third };
         static void Main(string[] args)
         {
-            int setting = 0;
-            Dictionary<string, List<int>> columns = new Dictionary<string, List<int>>(numCols);
-            for (Column cols = Column.First; cols < Column.Third; cols++)
-            {
-                setting++;
-                List<int> nums = new List<int>(colSize);
-                for (int i = 1; i <= colSize; i++)
-                {
-                    if (setting == 1)
-                        nums.Add(i);
-                    if (setting == 2)
-                        nums.Add(i + 12);
-                    if (setting == 3)
-                        nums.Add(i + 24);
-                }
-                columns.Add(cols.ToString(), nums);
-            }
-            Position pos = new Position();
             Nav();
         }
         private static void Nav()
         {
-            string choice, result;
+            string choice;
             int c;
             Console.WriteLine("Let's play some Roulette!");
             Console.WriteLine("Place your bets:");
@@ -81,13 +62,13 @@ namespace RouletteTesting
             {
                 Console.Write("1st dozen, 2nd dozen, or 3rd dozen? type 1, 2, or 3: ");
                 choice = Console.ReadLine();
-                ThreeOptions(choice, 'A');
+                ThreeOptions(choice, 'D');
             }
             else if (input == 6)
             {
                 Console.Write("1st column, 2nd column, or 3rd column? type 1, 2, or 3");
                 choice = Console.ReadLine();
-                ThreeOptions(choice, 'B');
+                ThreeOptions(choice, 'C');
             }
             else if (input == 7)
             {
@@ -109,11 +90,8 @@ namespace RouletteTesting
                 split[0] = chkParse(choice);
                 choice = Console.ReadLine();
                 split[1] = chkParse(choice);
-                if (split[0] < (split[1] - 1) || split[0] > (split[1] + 1))
-                {
-                    Console.WriteLine("That is not a valid split");
-                    Nav();
-                }
+                if (split[0] != (split[1] - 1) && split[0] != (split[1] + 1) && split[0] != (split[1] + 3) && split[0] != (split[1] - 3))
+                    badInput();
                 arrChoice(split);
             }
             else if (input == 9)
@@ -141,25 +119,106 @@ namespace RouletteTesting
 
         private static void arrChoice(int[] A)
         {
-            throw new NotImplementedException();
+            /*
+            int len = A.Length;
+            Position pos = new Position();
+            if (len == 3)
+                
+            if (len == 2)
+
+            if (len == 4)
+            */
         }
 
-        private static void strChoice(string choice, char A = 'C')
+        private static void strChoice(string choice, char A = 'A')
         {
-            throw new NotImplementedException();
+            int numCols = 3;
+            int colSize = 12;
+            int setting = 0;
+            Dictionary<string, List<int>> table = new Dictionary<string, List<int>>(numCols);
+            Position pos = new Position();
+            if (A == 'C')
+            {
+                for (Column cols = Column.First; cols <= Column.Third; cols++)
+                {
+                    setting++;
+                    List<int> nums = new List<int>(colSize);
+                    if (setting == 1)
+                    {
+                        for (int i = 1; i <= colSize; i += 3)
+                            nums.Add(i);
+                    }
+                    if (setting == 2)
+                    {
+                        for (int i = 2; i <= colSize; i += 3)
+                            nums.Add(i);
+                    }
+                    if (setting == 3)
+                    {
+                        for (int i = 3; i <= colSize; i += 3)
+                            nums.Add(i);
+                    }
+                    table.Add(cols.ToString(), nums);
+                }
+                if (table[choice].Contains(pos.num))
+                {
+                    Console.WriteLine($"The number was {pos.num} {pos.color}");
+                    Console.WriteLine("You WIN!");
+                    Console.ReadKey();
+                    Nav();
+                }
+                else
+                {
+                    Console.WriteLine("You lost");
+                    Console.ReadKey();
+                    Nav();
+                }
+            }
+            if (A == 'D')
+            {
+                for (Column cols = Column.First; cols <= Column.Third; cols++)
+                {
+                    setting++;
+                    List<int> nums = new List<int>(colSize);
+                    for (int i = 1; i <= colSize; i++)
+                    {
+                        if (setting == 1)
+                            nums.Add(i);
+                        if (setting == 2)
+                            nums.Add(i + 12);
+                        if (setting == 3)
+                            nums.Add(i + 24);
+                    }
+                    table.Add(cols.ToString(), nums);
+                }
+                if (table[choice].Contains(pos.num))
+                {
+                    Console.WriteLine($"The number was {pos.num} {pos.color}");
+                    Console.WriteLine("You WIN!");
+                    Console.ReadKey();
+                    Nav();
+                }
+                else
+                {
+                    Console.WriteLine("You lost");
+                    Console.ReadKey();
+                    Nav();
+                }
+            }
+            if (A == 'A')
+            {
+
+            }
         }
 
         private static void letterChoice(string choice, string L1, string L2)
         {
             if (choice == L1)
-                 strChoice(L1);
+                strChoice(L1);
             if (choice == L2)
                 strChoice(L2);
             else
-            {
-                Console.WriteLine("Invalid choice. returning to main menu");
-                Nav();
-            }
+                badInput();
         }
         private static void badInput()
         {
@@ -186,10 +245,7 @@ namespace RouletteTesting
             else if (c == 3)
                 strChoice("Third", A);
             else
-            {
-                Console.WriteLine("Please enter a valid choice. returning to main menu");
-                Nav();
-            }
+                badInput();
         }
     }
 }

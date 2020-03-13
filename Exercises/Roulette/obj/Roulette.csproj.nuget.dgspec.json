@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wwstudent\\Documents\\ISTA322\\Exercises\\Roulette\\Roulette.csproj": {}
+    "C:\\Users\\Chain\\Documents\\ISTA322\\Exercises\\Roulette\\Roulette.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wwstudent\\Documents\\ISTA322\\Exercises\\Roulette\\Roulette.csproj": {
+    "C:\\Users\\Chain\\Documents\\ISTA322\\Exercises\\Roulette\\Roulette.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wwstudent\\Documents\\ISTA322\\Exercises\\Roulette\\Roulette.csproj",
+        "projectUniqueName": "C:\\Users\\Chain\\Documents\\ISTA322\\Exercises\\Roulette\\Roulette.csproj",
         "projectName": "Roulette",
-        "projectPath": "C:\\Users\\wwstudent\\Documents\\ISTA322\\Exercises\\Roulette\\Roulette.csproj",
-        "packagesPath": "C:\\Users\\wwstudent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wwstudent\\Documents\\ISTA322\\Exercises\\Roulette\\obj\\",
+        "projectPath": "C:\\Users\\Chain\\Documents\\ISTA322\\Exercises\\Roulette\\Roulette.csproj",
+        "packagesPath": "C:\\Users\\Chain\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Chain\\Documents\\ISTA322\\Exercises\\Roulette\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\wwstudent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Chain\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
